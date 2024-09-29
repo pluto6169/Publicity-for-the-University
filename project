@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم المكتبات والوثائق والمعلومات</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            color: #444;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.dark {
+            background: linear-gradient(135deg, #2b2b2b, #121212);
+            color: #e0e0e0;
+        }
+
+        .menu li {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .menu li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+            color: #ffdd57;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark .container {
+            background-color: #1f1f1f;
+        }
+
+        header {
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+
+        nav {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            border-radius: 0 0 10px 10px;
+        }
+
+        nav .menu {
+            list-style: none;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav .menu li {
+            margin: 0 20px;
+        }
+
+        nav .menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        body.dark nav .menu li a {
+            color: #e0e0e0;
+        }
+
+        body.dark nav .menu li a:hover {
+            color: #ffdd57;
+        }
+
+        main {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .gallery img {
+            width: 30%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        body.dark .gallery img {
+            border: 1px solid #444;
+        }
+
+        .details {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        body.dark .details {
+            color: #e0e0e0;
+            border: 1px solid #444;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+
+        body.dark footer {
+            background-color: #1f1f1f;
+        }
+
+        .theme-toggle {
+            float: right;
+            margin-top: 10px;
+        }
+
+        #theme-select {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        body.dark #theme-select {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .english {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .english .container {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .english .gallery {
+            flex-direction: row-reverse;
+        }
+
+        .english .details {
+            text-align: left;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>قسم المكتبات والوثائق والمعلومات</h1>
+            <div class="theme-toggle">
+                <label for="theme-select">اختيار اللون:</label>
+                <select id="theme-select">
+                    <option value="light">فاتح</option>
+                    <option value="dark">غامق</option>
+                </select>
+
+            </div>
+        </header>
+        <nav>
+            <ul class="menu">
+                <li><a href="#" onclick="showDetails('history')">تاريخ القسم</a></li>
+                <li><a href="#" onclick="showDetails('specializations')">التخصصات</a></li>
+                <li><a href="#" onclick="showDetails('admission')">متطلبات القبول</a></li>
+                <li><a href="#" onclick="showDetails('jobs')">فرص العمل</a></li>
+                <li><a href="#" onclick="showDetails('activities')">أنشطة القسم</a></li>
+            </ul>
+        </nav>
+        <main>
+            <div class="gallery">
+                <img src="E:\chatbot\templates\download (1).jpeg" alt="صورة للجامعة 1">
+                <img src="E:\chatbot\templates\download (2).jpeg" alt="صورة للجامعة 2">
+                <img src="E:\chatbot\templates\download.jpeg" alt="صورة للجامعة 3">
+            </div>
+
+            <div id="details-container">
+                <div id="history" class="details">
+                    <h1>تاريخ قسم المكتبات والوثائق والمعلومات بجامعة القاهرة</h1>
+
+                    <li>النشأة والتأسيس</li>
+                    <div class="point">تأسس قسم المكتبات والوثائق والمعلومات في عام 1970 كجزء من كلية الآداب بجامعة
+                        القاهرة.</div>
+                    <div class="point">جاء إنشاء القسم استجابةً لحاجة المجتمع المصري والعربي إلى مهنيين متخصصين في إدارة
+                        المكتبات والمعلومات، خاصة مع التطورات التكنولوجية المتسارعة في هذا المجال.</div>
+
+                    <li>التطور الأكاديمي</li>
+                    <div class="point">منذ تأسيسه، بدأ القسم بتقديم برامج دراسات بكاليوس تهدف إلى إعداد كوادر مؤهلة في
+                        مجالات المكتبات والمعلومات.</div>
+                    <div class="point">تم إدخال العديد من التخصصات الجديدة والمناهج الدراسية لتلبية احتياجات سوق العمل،
+                        مثل:</div>
+                    <div class="point">إدارة المكتبات.</div>
+                    <div class="point">نظم المعلومات.</div>
+                    <div class="point">المعلومات الرقمية.</div>
+                    <div class="point">المكتبات الجامعية.</div>
+
+                    <li>الشراكات والتعاون</li>
+                    <div class="point">أبرم القسم شراكات مع العديد من المؤسسات الأكاديمية المحلية والدولية لتعزيز مستوى
+                        التعليم والبحث.</div>
+                    <div class="point">تنظيم مؤتمرات وورش عمل ودورات تدريبية لتحسين مهارات الطلاب والممارسين في مجالات
+                        المكتبات والمعلومات.</div>
+
+                    <li>التطورات الحديثة</li>
+                    <div class="point">مع ظهور التقنيات الحديثة، قام القسم بتحديث مناهجه لتشمل موضوعات مثل:</div>
+                    <div class="point">إدارة المعلومات الرقمية.</div>
+                    <div class="point">تحليل البيانات.</div>
+                    <div class="point">استخدام التكنولوجيا في المكتبات.</div>
+
+                    <li>الرسالة والرؤية</li>
+                    <div class="point">يسعى قسم المكتبات والوثائق والمعلومات إلى تحقيق تميز أكاديمي وبحثي، ويهدف إلى
+                        إعداد خريجين قادرين على التعامل مع التحديات الحالية والمستقبلية في مجال المعلومات.</div>
+
+                    <li>الأنشطة والمساهمات</li>
+                    <div class="point">يشارك القسم في تنظيم العديد من الفعاليات الأكاديمية والثقافية، مما يسهم في تعزيز
+                        الوعي بأهمية المكتبات والمعلومات في المجتمع.</div>
+
+                </div>
+                <div id="specializations" class="details">
+                    <div class="container">
+                        <h1>تخصصات قسم المكتبات والوثائق والمعلومات بجامعة القاهرة</h1>
+
+                        <ul>
+                            <li>إدارة المكتبات
+                                <div class="description">يركز هذا التخصص على تطوير المهارات اللازمة لإدارة المكتبات
+                                    العامة، الجامعية، والمكتبات المتخصصة. يشمل ذلك التخطيط والتنظيم والتوجيه والرقابة.
+                                </div>
+                            </li>
+                            <li>نظم المعلومات
+                                <div class="description">يركز هذا التخصص على تصميم وتطوير وإدارة نظم المعلومات التي
+                                    تستخدم في المكتبات، بما في ذلك قواعد البيانات ونظم إدارة المعلومات.</div>
+                            </li>
+                            <li>المعلومات الرقمية
+                                <div class="description">يركز هذا التخصص على كيفية تنظيم وإدارة وتوزيع المعلومات في شكل
+                                    رقمي. يتضمن ذلك إنشاء المكتبات الرقمية والأرشفة الرقمية.</div>
+                            </li>
+                            <li>المكتبات الجامعية
+                                <div class="description">يتناول هذا التخصص الإدارة والعمليات الخاصة بالمكتبات الجامعية،
+                                    التي تدعم العملية التعليمية والبحث العلمي.</div>
+                            </li>
+                            <li>إدارة الوثائق والأرشيفات
+                                <div class="description">يركز هذا التخصص على تنظيم وإدارة الوثائق والمواد الأرشيفية، بما
+                                    في ذلك الوثائق الورقية والرقمية.</div>
+                            </li>
+                            <li>تحليل المعلومات
+                                <div class="description">يتناول هذا التخصص تحليل المعلومات واستخدام تقنيات البيانات
+                                    الكبيرة لفهم الاتجاهات والأنماط في البيانات.</div>
+                            </li>
+                            <li>البرمجة وعلوم الحاسوب للمكتبات
+                                <div class="description">يركز هذا التخصص على استخدام البرمجة وتطوير البرمجيات في مجال
+                                    المكتبات والمعلومات.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="admission" class="details">
+                    <div class="container">
+                        <h1>متطلبات التقدم والقبول في قسم المكتبات والوثائق والمعلومات</h1>
+
+                        <ul>
+                            <li>متطلبات التقدم والقبول
+                                <div class="description">
+                                    <ul>
+                                        <li>الشهادة الثانوية
+                                            <div class="description">يجب على المتقدمين الحصول على شهادة الثانوية العامة
+                                                أو ما يعادلها. يتعين على المتقدمين تحقيق الحد الأدنى من الدرجات المطلوبة
+                                                في المواد الأساسية.</div>
+                                        </li>
+                                        <li>الاختبارات والمقابلات
+                                            <div class="description">قد يتطلب القبول في بعض البرامج اجتياز اختبارات
+                                                معينة أو مقابلات شخصية.</div>
+                                        </li>
+                                        <li>المستندات المطلوبة
+                                            <div class="description">شهادة الثانوية العامة الأصلية ونسخ مصدقة منها، صور
+                                                شخصية حديثة، بطاقة الرقم القومي أو جواز السفر، استمارة التقديم المملوءة.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>نظام التشعيب
+                                <div class="description">
+                                    <ul>
+                                        <li>بعد الانتهاء من السنة الأولى، يُمكن للطلاب اختيار التخصصات المختلفة بناءً
+                                            على اهتماماتهم وأداءهم الأكاديمي.</li>
+                                        <li>يتم تقسيم الطلاب إلى مجموعات حسب التخصصات، مثل:
+                                            <ul>
+                                                <li>إدارة المكتبات</li>
+                                                <li>نظم المعلومات</li>
+                                                <li>المعلومات الرقمية</li>
+                                                <li>إدارة الوثائق والأرشيفات</li>
+                                                <li>تحليل المعلومات</li>
+                                                <li>البرمجة وعلوم الحاسوب للمكتبات</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>الدراسات العليا
+                                <div class="description">
+                                    <ul>
+                                        <li>برامج الماجستير
+                                            <div class="description">يُقدم القسم برامج ماجستير في تخصصات متعددة تتعلق
+                                                بالمكتبات والوثائق والمعلومات. تتطلب برامج الماجستير تقديم مشروع بحثي أو
+                                                رسالة علمية.</div>
+                                        </li>
+                                        <li>برامج الدكتوراه
+                                            <div class="description">يتاح للطلاب الذين حصلوا على درجة الماجستير التقدم
+                                                للدراسات العليا للحصول على درجة الدكتوراه، ويجب أن يتضمن مشروع الدكتوراه
+                                                بحثًا أصليًا.</div>
+                                        </li>
+                                        <li>الشروط العامة للدراسات العليا
+                                            <div class="description">الحصول على درجة الماجستير من جامعة معترف بها، تقديم
+                                                مقترح بحثي، واجتياز مقابلة مع أعضاء هيئة التدريس.</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>أنشطة الدعم والتوجيه
+                                <div class="description">يُقدم القسم ورش عمل ودورات تدريبية للطلاب الجدد لمساعدتهم في
+                                    فهم المتطلبات الأكاديمية والفرص المتاحة في مجال المكتبات والمعلومات.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="jobs" class="details">
+                    <div class="container">
+                        <h1>فرص العمل ومتوسط المرتبات</h1>
+
+                        <ul>
+                            <li>فرص العمل
+                                <div class="description">
+                                    يُمكن لخريجي قسم المكتبات والوثائق والمعلومات العمل في مجموعة متنوعة من المجالات،
+                                    تشمل:
+                                    <ul>
+                                        <li>مدير مكتبة: مسؤول عن إدارة المكتبات العامة والجامعية.</li>
+                                        <li>أخصائي معلومات: يساعد الأفراد في الوصول إلى المعلومات والموارد المناسبة.
+                                        </li>
+                                        <li>محلل بيانات: يقوم بتحليل المعلومات واستخدامها لدعم اتخاذ القرار.</li>
+                                        <li>مؤرخ: يعمل على تنظيم وحفظ السجلات التاريخية والوثائق.</li>
+                                        <li>مدير نظام معلومات: مسؤول عن إدارة أنظمة المعلومات في المؤسسات.</li>
+                                        <li>أخصائي أرشيف: يعمل على تنظيم وحفظ الوثائق الرسمية.</li>
+                                        <li>مستشار تكنولوجيا المعلومات: يقدم استشارات حول استخدام التكنولوجيا في
+                                            المكتبات.</li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>متوسط المرتبات
+                                <div class="description">
+                                    تتفاوت مرتبات خريجي القسم بناءً على عدة عوامل، منها:
+                                    <ul>
+                                        <li>المسمى الوظيفي: تختلف الرواتب حسب الوظيفة، حيث يُعتبر مدير المكتبة من بين
+                                            أعلى الوظائف أجرًا.</li>
+                                        <li>سنوات الخبرة: كلما زادت سنوات الخبرة، زادت فرصة الحصول على مرتبات أعلى.</li>
+                                        <li>الموقع الجغرافي: تختلف الرواتب أيضًا بناءً على المدينة أو الدولة التي يعمل
+                                            بها الخريج.</li>
+                                        <li>متوسط المرتبات التقريبي:
+                                            <ul>
+                                                <li>مدير مكتبة: 6000 - 12000 جنيه مصري شهريًا.</li>
+                                                <li>أخصائي معلومات: 4000 - 8000 جنيه مصري شهريًا.</li>
+                                                <li>محلل بيانات: 5000 - 10000 جنيه مصري شهريًا.</li>
+                                                <li>أخصائي أرشيف: 3000 - 7000 جنيه مصري شهريًا.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div id="activities" class="details">
+                    <div class="container">
+                        <h1>المؤتمرات والأنشطة</h1>
+
+                        <ul>
+                            <li>المؤتمرات
+                                <div class="description">
+                                    ينظم قسم المكتبات والوثائق والمعلومات مجموعة من المؤتمرات العلمية التي تهدف إلى
+                                    تعزيز المعرفة وتبادل الخبرات في مجال المكتبات والمعلومات، ومنها:
+                                    <ul>
+                                        <li>المؤتمر السنوي للمكتبات: يُعقد سنويًا ويجمع المهنيين والأكاديميين لمناقشة
+                                            أحدث التطورات في مجال المكتبات.</li>
+                                        <li>مؤتمر المعلومات الرقمية: يركز على التحديات والابتكارات في إدارة المعلومات
+                                            الرقمية والتكنولوجيا الحديثة.</li>
+                                        <li>ورش عمل متخصصة: تُنظم دورات تدريبية وورش عمل لتطوير المهارات التقنية
+                                            والإدارية للطلاب والمهنيين.</li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li>الأنشطة الطلابية
+                                <div class="description">
+                                    يُشجع القسم على المشاركة في الأنشطة الطلابية التي تعزز من تطوير المهارات الشخصية
+                                    والاجتماعية، مثل:
+                                    <ul>
+                                        <li>الندوات الثقافية: تُقام ندوات دورية لمناقشة مواضيع ثقافية وأكاديمية تهم
+                                            الطلاب.</li>
+                                        <li>الرحلات العلمية: تنظيم رحلات إلى مكتبات ومراكز معلومات محلية ودولية لتبادل
+                                            المعرفة.</li>
+                                        <li>المسابقات الأكاديمية: تُقام مسابقات لتحفيز الطلاب على التنافس والابتكار في
+                                            مجال المكتبات والمعلومات.</li>
+                                        <li>مجموعات الدراسة: تشكيل مجموعات للدراسة والمناقشة لتعزيز التعاون بين الطلاب.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+        </main>
+        <footer>
+            <p>حقوق الطبع والنشر &copy; 2024 قسم المكتبات والوثائق والمعلومات - جامعة القاهرة</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('theme-select').addEventListener('change', function () {
+            if (this.value === 'dark') {
+                document.body.classList.add('dark');
+            } else {
+                document.body.classList.remove('dark');
+            }
+        });
+
+        function showDetails(sectionId) {
+            const details = document.querySelectorAll('.details');
+            details.forEach(detail => detail.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
