@@ -453,9 +453,6 @@
 
                 </div>
         </main>
-        <footer>
-            <p>حقوق الطبع والنشر &copy; 2024 قسم المكتبات والوثائق والمعلومات - جامعة القاهرة</p>
-        </footer>
     </div>
     <script>
         document.getElementById('theme-select').addEventListener('change', function () {
