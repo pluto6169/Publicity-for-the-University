@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>قسم المكتبات والوثائق والمعلومات</title>
+    <link rel="stylesheet" href="animate.css">
     <style>
         * {
             margin: 0;
@@ -12,8 +13,44 @@
             box-sizing: border-box;
         }
 
+        button {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .animate {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .element {
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             background: linear-gradient(135deg, #6dd5ed, #2193b0);
             color: #444;
@@ -27,15 +64,6 @@
             color: #e0e0e0;
         }
 
-        .menu li {
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .menu li:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: scale(1.05);
-            color: #ffdd57;
-        }
 
         .container {
             max-width: 1200px;
@@ -44,6 +72,10 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            background-size: cover;
+
+            min-height: 100vh;
+
         }
 
         body.dark .container {
@@ -73,6 +105,13 @@
 
         nav .menu li {
             margin: 0 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav .menu li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+            color: #ffdd57;
         }
 
         nav .menu li a {
@@ -117,6 +156,7 @@
             border: 1px solid #444;
         }
 
+
         .details {
             display: none;
             padding: 20px;
@@ -125,11 +165,28 @@
             margin: 20px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             color: #333;
+            overflow-y: auto;
+            max-height: 500px;
+
         }
 
         body.dark .details {
             color: #e0e0e0;
             border: 1px solid #444;
+        }
+
+        .details::-webkit-scrollbar {
+            width: 10px;
+            background-color: #f5f5f5;
+        }
+
+        .details::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 10px;
+        }
+
+        .details::-webkit-scrollbar-thumb:hover {
+            background-color: #aaa;
         }
 
         footer {
@@ -144,40 +201,10 @@
             background-color: #1f1f1f;
         }
 
+
         .theme-toggle {
             float: right;
             margin-top: 10px;
-        }
-
-        #theme-select {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #fff;
-            color: #333;
-        }
-
-        body.dark #theme-select {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .english {
-            direction: ltr;
-            text-align: left;
-        }
-
-        .english .container {
-            margin-left: 0;
-            margin-right: auto;
-        }
-
-        .english .gallery {
-            flex-direction: row-reverse;
-        }
-
-        .english .details {
-            text-align: left;
         }
     </style>
 
@@ -208,9 +235,9 @@
         </nav>
         <main>
             <div class="gallery">
-                <img src="E:\chatbot\templates\download (1).jpeg" alt="صورة للجامعة 1">
-                <img src="E:\chatbot\templates\download (2).jpeg" alt="صورة للجامعة 2">
-                <img src="E:\chatbot\templates\download.jpeg" alt="صورة للجامعة 3">
+                <img src="E:\chatbot\website\download (1).jpeg" alt="صورة للجامعة 1">
+                <img src="E:\chatbot\website\download (2).jpeg" alt="صورة للجامعة 2">
+                <img src="E:\chatbot\website\download.jpeg" alt="صورة للجامعة 3">
             </div>
 
             <div id="details-container">
@@ -398,10 +425,10 @@
                                             بها الخريج.</li>
                                         <li>متوسط المرتبات التقريبي:
                                             <ul>
-                                                <li>مدير مكتبة: 6000 - 12000 جنيه مصري شهريًا.</li>
-                                                <li>أخصائي معلومات: 4000 - 8000 جنيه مصري شهريًا.</li>
-                                                <li>محلل بيانات: 5000 - 10000 جنيه مصري شهريًا.</li>
-                                                <li>أخصائي أرشيف: 3000 - 7000 جنيه مصري شهريًا.</li>
+                                                <li>مدير مكتبة: 15000 - 20000 جنيه مصري شهريًا.</li>
+                                                <li>أخصائي معلومات: 20000 - 25000 جنيه مصري شهريًا.</li>
+                                                <li>محلل بيانات: 14000 - 22000 جنيه مصري شهريًا.</li>
+                                                <li>أخصائي أرشيف: 10000 - 19000 جنيه مصري شهريًا.</li>
                                             </ul>
                                         </li>
                                     </ul>
