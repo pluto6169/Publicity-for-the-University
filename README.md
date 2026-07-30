@@ -118,13 +118,15 @@ Publicity-for-the-University/
 
 يتم نشر الموقع تلقائيًا عبر **GitHub Pages** مع كل تحديث على فرع `main`.
 
+📄 حقوق الملكية (Copyright)
+جميع الحقوق محفوظة © 2025 Mohammed Tarek — All Rights Reserved.
+
+لا يجوز نسخ، تعديل، إعادة نشر، أو استخدام أي جزء من هذا المشروع (الأكواد، التصاميم، المحتوى، أو الإنفوجرافيكس) بأي شكل من الأشكال دون إذن كتابي مُسبق من المؤلف.
+
+
 ## المطوّر
+👨‍💻 تطوير وإعداد: Mohammed Tarek
 
-**محمد طارق**
-أخصائي معلومات ومكتبات | مطوّر أنظمة رقمية
+
 📧 mohammedtarek882@gmail.com
-🔗 [LinkedIn](https://linkedin.com/in/mohammedtarek)
-
-## الترخيص
-
-هذا المشروع متاح للاستخدام التعليمي وغير التجاري. يمكنك عمل fork له وتطويعه لقسمك أو مؤسستك.
+🔗 [LinkedIn](https://www.linkedin.com/in/mohammedtarek882/)
